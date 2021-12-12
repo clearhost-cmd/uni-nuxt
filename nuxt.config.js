@@ -41,15 +41,11 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: "http://localhost:3000/"
+    baseURL: "https://uni-loopback.herokuapp.com/"
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  },
-
-  server: {
-    port: 8000 // default: 3000
   },
 
   loading: {
