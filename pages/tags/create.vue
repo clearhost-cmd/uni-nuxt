@@ -27,7 +27,7 @@
       </div>
 
       <button class="mt-5 px-2 py-1 text-[10px] bg-blue-600 rounded-full text-white">
-        Confirm
+        Confirms
       </button>
     </form>
   </tag-create>
