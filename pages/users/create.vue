@@ -18,10 +18,12 @@
         <!--
           Create Form Textarea for Body
         -->
-        <form-textarea
+        <form-input
           v-model="password"
+          type="password"
           id="password"
-          label="User Password"
+          name="password"
+          label="Update Password"
         />
         <!--
           Create Form Button for Submit

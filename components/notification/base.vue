@@ -1,7 +1,10 @@
 <template>
   <div class="text-xs dark:bg-gray-900 flex items-center justify-center pb-5">
     <div class="px-5 py-4 bg-white dark:bg-gray-800 shadow rounded-lg w-full">
-      {{ message }}
+      <div class="flex flex-row gap-1">
+        <div class="font-semibold">Validator:</div>
+        <div>{{ message }}</div>
+      </div>
     </div>
   </div>
 </template>
