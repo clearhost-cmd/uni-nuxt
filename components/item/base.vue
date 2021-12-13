@@ -3,15 +3,15 @@
     <div class="px-5 py-4 bg-white dark:bg-gray-800 shadow rounded-lg w-full">
       <div class="flex mb-4">
         <div class="ml-2 mt-0.5">
-          <span class="block font-medium text-base leading-snug text-black dark:text-gray-100">
+          <span class="break-words block font-medium text-base leading-snug text-black dark:text-gray-100">
             {{ title }}
           </span>
-          <span class="block text-sm text-gray-500 dark:text-gray-400 font-light leading-snug">
+          <span class="break-words block text-sm text-gray-500 dark:text-gray-400 font-light leading-snug">
             <div>{{ created }}</div>
           </span>
         </div>
       </div>
-      <p class="text-gray-800 dark:text-gray-100 leading-snug md:leading-normal pl-1">
+      <p class="break-words text-gray-800 dark:text-gray-100 leading-snug md:leading-normal pl-1">
         {{ body }}
       </p>
       <div class="flex gap-3 items-right mt-5">
