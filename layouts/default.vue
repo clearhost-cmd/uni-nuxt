@@ -8,7 +8,7 @@
               <a class="px-5 font-semibold text-xs" :href="`/${ $nuxt.$route.name}/create`">New</a>
             </div>
 
-            <partials-navigation-links />
+            <navigation-links />
           </div>
         </div>
       </div>

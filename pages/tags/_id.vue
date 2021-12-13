@@ -2,7 +2,7 @@
   <!--
     Pass posts and replies array to child
   -->
-  <nuxt-child :post="$store.state.user" />
+  <nuxt-child :post="$store.state.tag" />
 </template>
 
 <script>
@@ -13,7 +13,7 @@ export default {
    * Run State Dispatches
    */
   async fetch({ store, params }) {
-    await store.dispatch('loadUser', {
+    await store.dispatch('loadTag', {
       id: params.id
     })
   },
@@ -23,7 +23,7 @@ export default {
    */
   computed: {
     ...mapState({
-      user: 'user'
+      tag: 'tag'
     })
   }
 }

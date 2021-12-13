@@ -1,12 +1,26 @@
 <template>
-
+  <card-base>
+    <form v-on:submit.prevent="onSubmit">
+      <!--
+        Create Form Button for Submit
+      -->
+      <button-base
+        action="Confirm"
+      />
+    </form>
+  </card-base>
 </template>
 
 <script>
 export default {
-  created: function() {
-    this.$axios.delete(`/replies/${this.$route.params.id}`)
-    this.$router.push("/replies");
+  methods: {
+    /**
+     * OnSubmit Delete w/Params & Router Push
+     */
+    onSubmit() {
+      this.$axios.delete(`/replies/${this.$route.params.id}`)
+      this.$router.push("/replies");
+    }
   }
 }
 </script>

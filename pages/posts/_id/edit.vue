@@ -1,32 +1,37 @@
 <template>
-  <card-base>
-    <form v-on:submit.prevent="onSubmit">
-      <!--
-        Create Form Input for Title
-      -->
-      <form-input
-        v-model="title"
-        type="text"
-        id="title"
-        name="title"
-        label="Update Post Title"
-      />
-      <!--
-        Create Form Textarea for Body
-      -->
-      <form-textarea
-        v-model="body"
-        id="body"
-        label="Update Post Body"
-      />
-      <!--
-        Create Form Button for Submit
-      -->
-      <button-base
-        action="Confirm"
-      />
-    </form>
-  </card-base>
+  <div>
+    <div v-for="event in events" :key="event.message">
+      <notification-base :message="event.message" />
+    </div>
+    <card-base>
+      <form v-on:submit.prevent="onSubmit">
+        <!--
+          Create Form Input for Title
+        -->
+        <form-input
+          v-model="title"
+          type="text"
+          id="title"
+          name="title"
+          label="Update Post Title"
+        />
+        <!--
+          Create Form Textarea for Body
+        -->
+        <form-textarea
+          v-model="body"
+          id="body"
+          label="Update Post Body"
+        />
+        <!--
+          Create Form Button for Submit
+        -->
+        <button-base
+          action="Confirm"
+        />
+      </form>
+    </card-base>
+  </div>
 </template>
 
 <script>
@@ -38,6 +43,7 @@ export default {
     return {
       title: null,
       body: null,
+      events: []
     };
   },
 
@@ -50,8 +56,12 @@ export default {
         title: this.title,
         body: this.body,
       })
-
-      // this.$router.push("/posts");
+      .then(() => {
+        this.$router.push("/posts");
+      })
+      .catch(error => {
+        this.events = error.response.data.error.details;
+      })
     }
   },
 }

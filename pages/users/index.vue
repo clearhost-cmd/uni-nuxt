@@ -1,12 +1,19 @@
 <template>
   <div>
-    <div class="grid grid-cols-1 gap-4">
-      <div class="text-xs" v-for="user in $store.state.users" :key="user.id">
-        <lazy-user-item v-bind:user="user"/>
-      </div>
-
-      <nuxt-child />
+    <!--
+      Create for each post in posts state
+    -->
+    <div v-for="user in $store.state.users" :key="user.id">
+      <item-base :title="user.name" :body="user.password" :created="user.created">
+        <item-crud uri="users" operation="edit" :id="user.id" action="Edit User" />
+        <item-crud uri="users" operation="delete" :id="user.id" action="Delete User" />
+      </item-base>
     </div>
+
+    <!--
+      Pass posts and replies array to child
+    -->
+    <nuxt-child />
   </div>
 </template>
 
@@ -14,10 +21,16 @@
 import { mapState } from 'vuex';
 
 export default {
+  /**
+   * Run State Dispatches
+   */
   async fetch({store}) {
     await store.dispatch('loadUsers')
   },
 
+  /**
+   * Create State Mapping
+   */
   computed: {
     ...mapState({
       users: 'users'

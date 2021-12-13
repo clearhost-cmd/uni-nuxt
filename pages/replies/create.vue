@@ -1,74 +1,113 @@
 <template>
-  <reply-create>
-    <form v-on:submit.prevent="createPost">
-      <div class="text-xs flex flex-col gap-5 justify-between">
-        <div class="w-full">
-          <label for="title">Reply Title</label>
-        </div>
-        <div class="w-full">
-          <input v-model="title" class="bg-gray-100 rounded-md px-5 w-full h-8" type="text" id="title" name="title">
-        </div>
-        <div class="w-full">
-          <label for="post">Reply Body</label>
-        </div>
-        <div class="w-full">
-          <textarea v-model="body" class="bg-gray-100 rounded-md w-full h-28 p-5" id="body" name="body" />
-        </div>
-        <div class="w-full">
-          <label for="post">Select User</label>
-        </div>
-        <div class="w-full">
-          <select v-model.number="user_id" name="user_id" id="user_id" class="px-5 bg-gray-100 rounded-md w-full h-8">
-            <option v-for="user in $store.state.users" :key="user.id" v-bind:value="user.id">
-              {{ user.name }}
-            </option>
-          </select>
-        </div>
-        <div class="w-full">
-          <label for="post">Select Post</label>
-        </div>
-        <div class="w-full">
-          <select v-model.number="post_id" name="post_id" id="post_id" class="px-5 bg-gray-100 rounded-md w-full h-8">
-            <option v-for="post in $store.state.posts" :key="post.id" v-bind:value="post.id">
-              {{ post.title }}
-            </option>
-          </select>
-        </div>
-      </div>
-
-      <button class="mt-5 px-2 py-1 text-[10px] bg-blue-600 rounded-full text-white">
-        Confirm
-      </button>
-    </form>
-  </reply-create>
+  <div>
+    <div v-for="event in events" :key="event.message">
+      <notification-base :message="event.message" />
+    </div>
+    <card-base>
+      <form v-on:submit.prevent="onSubmit">
+        <!--
+          Create Form Input for Title
+        -->
+        <form-input
+          v-model="title"
+          type="text"
+          id="title"
+          name="title"
+          label="Reply Title"
+        />
+        <!--
+          Create Form Textarea for Body
+        -->
+        <form-textarea
+          v-model="body"
+          id="body"
+          label="Reply Body"
+        />
+        <!--
+          Create Form Select for User_Id
+        -->
+        <form-select
+          v-model.number="user_id"
+          id="user"
+          label="User"
+          v-bind:options="$store.state.users"
+          index="name"
+        />
+        <!--
+          Create Form Select for User_Id
+        -->
+        <form-select
+          v-model.number="post_id"
+          id="post"
+          label="Post"
+          v-bind:options="$store.state.posts"
+          index="title"
+        />
+        <!--
+          Create Form Button for Submit
+        -->
+        <button-base
+          action="Confirm"
+        />
+      </form>
+    </card-base>
+  </div>
 </template>
 
 <script>
 import {mapState} from "vuex";
 
 export default {
+  layout: 'index',
+
+  data() {
+    /**
+     * Return Data Back to Render
+     */
+    return {
+      title: null,
+      body: null,
+      user_id: null,
+      post_id: null,
+      events: []
+    };
+  },
+
   methods: {
-    createPost() {
+    /**
+     * OnSubmit Post w/Params & Router Push
+     */
+    onSubmit() {
       this.$axios.post('/replies', {
         title: this.title,
         body: this.body,
         user_id: this.user_id,
         post_id: this.post_id,
       })
-
-      this.$router.push("/posts/" + this.post_id);
+      .then(() => {
+        this.$router.push("/replies");
+      })
+      .catch(error => {
+        this.events = error.response.data.error.details;
+      })
     }
   },
 
+  /**
+   * Run Async State Dispatches
+   */
   async fetch({store}) {
     await store.dispatch('loadUsers')
     await store.dispatch('loadPosts')
   },
 
+  /**
+   * Create State Mapping
+   */
   computed: {
     ...mapState({
       users: 'users',
-      posts: 'posts'
+      posts: 'posts',
     })
   }
 }
