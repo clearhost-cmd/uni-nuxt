@@ -12,7 +12,7 @@
 export default {
   props: {
     /**
-     * Create Required Label String w/Default
+     * Create Required Tyoe String w/Default
      */
     type: {
       type: String,
@@ -20,7 +20,7 @@ export default {
       default: 'type',
     },
     /**
-     * Create Required Label String w/Default
+     * Create Required Message String w/Default
      */
     message: {
       type: String,

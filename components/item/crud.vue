@@ -8,7 +8,7 @@
 export default {
   props: {
     /**
-     * Create Required Label String w/Default
+     * Create Required URI String w/Default
      */
     uri: {
       type: String,
@@ -16,7 +16,7 @@ export default {
       default: 'uri'
     },
     /**
-     * Create Required Type String w/Default & Validator
+     * Create Required ID Number w/Default
      */
     id: {
       type: Number,
@@ -24,7 +24,7 @@ export default {
       default: 'id'
     },
     /**
-     * Create Required ID String w/Default
+     * Create Required Action String w/Default
      */
     action: {
       type: String,
@@ -32,12 +32,12 @@ export default {
       default: 'action'
     },
     /**
-     * Create Required ID String w/Default
+     * Create Required Operation String w/Default
      */
     operation: {
       type: String,
       required: false,
-      default: ''
+      default: 'operation'
     }
   },
 }

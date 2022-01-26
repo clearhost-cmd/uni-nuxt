@@ -58,7 +58,7 @@ export default {
       default: 'name',
     },
     /**
-     * Create Static Value String
+     * Create Required Multiple Type
      */
     value: {
       type: [String, Number],

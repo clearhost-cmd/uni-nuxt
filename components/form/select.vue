@@ -44,14 +44,14 @@ export default {
       default: 'id',
     },
     /**
-     * Create Static Value String
+     * Create Required Multiple Type
      */
     value: {
       type: [String, Number],
       required: false,
     },
     /**
-     * Create Required ID String w/Default
+     * Create Required Options Array w/Default
      */
     options: {
       type: Array,
@@ -59,7 +59,7 @@ export default {
       default: ['array'],
     },
     /**
-     * Create Required ID String w/Default
+     * Create Required Undex String w/Default
      */
     index: {
       type: String,

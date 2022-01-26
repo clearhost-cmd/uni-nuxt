@@ -6,6 +6,15 @@
 
 <script>
 export default {
-  props: ['action']
+  props: {
+    /**
+     * Create Required Label String w/Default
+     */
+    label: {
+      type: String,
+      required: true,
+      default: 'Submit',
+    }
+  }
 }
 </script>

@@ -36,7 +36,7 @@ export default {
       default: 'id',
     },
     /**
-     * Create Static Value String
+     * Create Required Multiple Type
      */
     value: {
       type: [String, Number],

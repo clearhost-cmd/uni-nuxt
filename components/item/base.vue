@@ -25,7 +25,7 @@
 export default {
   props: {
     /**
-     * Create Required Label String w/Default
+     * Create Required Title String w/Default
      */
     title: {
       type: String,
@@ -33,7 +33,7 @@ export default {
       default: 'title',
     },
     /**
-     * Create Required Type String w/Default & Validator
+     * Create Required Body String w/Default
      */
     body: {
       type: String,
@@ -41,7 +41,7 @@ export default {
       default: 'body',
     },
     /**
-     * Create Required ID String w/Default
+     * Create Required Created String w/Default
      */
     created: {
       type: String,
