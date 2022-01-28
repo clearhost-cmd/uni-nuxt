@@ -1,5 +1,7 @@
 <template>
   <card-base>
+    <h1>Are you sure?</h1>
+    <p class="text-xs">This action is not reversable.</p>
     <form v-on:submit.prevent="onSubmit">
       <!--
         Create Form Button for Submit

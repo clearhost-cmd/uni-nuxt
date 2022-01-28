@@ -10,7 +10,7 @@ export default {
     /**
      * Create Required Label String w/Default
      */
-    label: {
+    action: {
       type: String,
       required: true,
       default: 'Submit',

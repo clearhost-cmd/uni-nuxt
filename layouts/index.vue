@@ -5,7 +5,7 @@
         <div class="w-full flex">
           <div class="flex gap-5">
             <div class="bg-gray-800 rounded-full text-white pb-1">
-              <a class="px-5 font-semibold text-xs" href="/posts">Back</a>
+              <a class="px-5 font-semibold text-xs" href="/posts">back</a>
             </div>
 
             <navigation-links />
