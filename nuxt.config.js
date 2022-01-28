@@ -51,5 +51,15 @@ export default {
   loading: {
     color: '3B82F6',
     height: '2px'
+  },
+
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'users ',
+        path: '/',
+        component: resolve(__dirname, 'pages/users/index.vue')
+      })
+    }
   }
 }

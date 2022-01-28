@@ -1,7 +1,6 @@
 <template>
   <card-base>
-    <h1>Are you sure?</h1>
-    <p class="text-xs">This action is not reversable.</p>
+    <h1>are you sure?</h1>
     <form v-on:submit.prevent="onSubmit">
       <!--
         Create Form Button for Submit
@@ -15,6 +14,8 @@
 
 <script>
 export default {
+  layout: 'index',
+
   methods: {
     /**
      * OnSubmit Delete w/Params & Router Push

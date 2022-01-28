@@ -36,6 +36,8 @@
 
 <script>
 export default {
+  layout: 'index',
+
   data() {
     /**
      * Return Data Back to Render

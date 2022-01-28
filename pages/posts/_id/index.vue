@@ -14,6 +14,8 @@
 
 <script>
 export default {
+  layout: 'index',
+    
   props: {
     /**
      * Create Required Post Object

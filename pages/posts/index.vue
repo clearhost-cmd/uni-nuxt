@@ -22,6 +22,8 @@
 import { mapState } from 'vuex';
 
 export default {
+  layout: 'default',
+    
   /**
    * Run State Dispatches
    */

@@ -9,6 +9,8 @@
 import { mapState } from 'vuex';
 
 export default {
+  layout: 'index',
+
   /**
    * Run State Dispatches
    */

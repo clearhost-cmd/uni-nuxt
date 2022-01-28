@@ -5,7 +5,7 @@
         <div class="w-full flex">
           <div class="flex gap-5">
             <div class="bg-gray-800 rounded-full text-white pb-1">
-              <a class="px-5 font-semibold text-xs" href="/posts">back</a>
+              <a @click="$router.go(-1)" class="px-5 font-semibold text-xs">back</a>
             </div>
 
             <navigation-links />
@@ -14,6 +14,9 @@
       </div>
     </div>
     <div class="container mx-auto px-20 py-5">
+        <div class="pb-5 text-2xl">
+            {{ $nuxt.$route.name }}
+        </div>
       <Nuxt />
     </div>
   </div>
