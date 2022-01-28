@@ -13,7 +13,7 @@
           type="text"
           id="name"
           name="name"
-          label="Update Username"
+          label="update username"
         />
         <!--
           Create Form Textarea for Body
@@ -23,13 +23,13 @@
           type="password"
           id="password"
           name="password"
-          label="Update Password"
+          label="update password"
         />
         <!--
           Create Form Button for Submit
         -->
         <button-base
-          action="Confirm"
+          action="confirm"
         />
       </form>
     </card-base>

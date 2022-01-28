@@ -5,8 +5,8 @@
     -->
     <div v-for="user in $store.state.users" :key="user.id">
       <item-base :title="user.name" :body="user.password" :created="user.created">
-        <item-crud uri="users" operation="edit" :id="user.id" action="Edit User" />
-        <item-crud uri="users" operation="delete" :id="user.id" action="Delete User" />
+        <item-crud uri="users" operation="edit" :id="user.id" action="edit user" />
+        <item-crud uri="users" operation="delete" :id="user.id" action="delete user" />
       </item-base>
     </div>
 

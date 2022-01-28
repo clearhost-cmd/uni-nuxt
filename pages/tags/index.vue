@@ -5,8 +5,8 @@
     -->
     <div v-for="tag in $store.state.tags" :key="tag.id">
       <item-base :title="tag.title" :body="tag.body" :created="tag.created">
-        <item-crud uri="tags" operation="edit" :id="tag.id" action="Edit Tag" />
-        <item-crud uri="tags" operation="delete" :id="tag.id" action="Delete Tag" />
+        <item-crud uri="tags" operation="edit" :id="tag.id" action="edit tag" />
+        <item-crud uri="tags" operation="delete" :id="tag.id" action="delete tag" />
       </item-base>
     </div>
 

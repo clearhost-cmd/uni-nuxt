@@ -5,7 +5,7 @@
         Create Form Button for Submit
       -->
       <button-base
-        action="Confirm"
+        action="confirm"
       />
     </form>
   </card-base>

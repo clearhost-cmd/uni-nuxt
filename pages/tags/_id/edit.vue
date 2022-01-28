@@ -13,7 +13,7 @@
           type="text"
           id="title"
           name="title"
-          label="Update Tag Title"
+          label="update tag title"
         />
         <!--
           Create Form Textarea for Body
@@ -21,13 +21,13 @@
         <form-textarea
           v-model="body"
           id="body"
-          label="Update Tag Body"
+          label="update tag body"
         />
         <!--
           Create Form Button for Submit
         -->
         <button-base
-          action="Confirm"
+          action="confirm"
         />
       </form>
     </card-base>
