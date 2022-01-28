@@ -18,10 +18,3 @@
     </div>
   </div>
 </template>
-
-<style scoped>
-.container{
-  font-size: 15px;
-  width: 500px;
-}
-</style>
