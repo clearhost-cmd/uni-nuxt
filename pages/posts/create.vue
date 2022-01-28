@@ -13,7 +13,7 @@
           type="text"
           id="title"
           name="title"
-          label="Post Title"
+          label="post title"
         />
         <!--
           Create Form Textarea for Body
@@ -21,7 +21,7 @@
         <form-textarea
           v-model="body"
           id="body"
-          label="Post Body"
+          label="post body"
         />
         <!--
           Create Form Select for User_Id
@@ -29,7 +29,7 @@
         <form-select
           v-model.number="user_id"
           id="user"
-          label="User"
+          label="user"
           v-bind:options="$store.state.users"
           index="name"
         />
@@ -39,7 +39,7 @@
         <form-select
           v-model.number="tag_id"
           id="tag"
-          label="Tag"
+          label="tag"
           v-bind:options="$store.state.tags"
           index="title"
         />
@@ -47,7 +47,7 @@
           Create Form Button for Submit
         -->
         <button-base
-          action="Confirm"
+          action="confirm"
         />
       </form>
     </card-base>

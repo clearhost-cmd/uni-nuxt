@@ -5,8 +5,8 @@
     -->
     <div v-for="reply in $store.state.post_replies" :key="reply.id">
       <item-base :title="reply.title" :body="reply.body" :created="reply.created">
-        <item-crud uri="/replies" operation="edit" :id="reply.id" action="Edit Reply" />
-        <item-crud uri="/replies" operation="delete" :id="reply.id" action="Delete Reply" />
+        <item-crud uri="/replies" operation="edit" :id="reply.id" action="edit reply" />
+        <item-crud uri="/replies" operation="delete" :id="reply.id" action="delete reply" />
       </item-base>
     </div>
   </div>

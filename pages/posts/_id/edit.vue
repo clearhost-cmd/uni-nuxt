@@ -13,7 +13,7 @@
           type="text"
           id="title"
           name="title"
-          label="Update Post Title"
+          label="update post title"
         />
         <!--
           Create Form Textarea for Body
@@ -21,7 +21,7 @@
         <form-textarea
           v-model="body"
           id="body"
-          label="Update Post Body"
+          label="update post body"
         />
         <!--
           Create Form Button for Submit

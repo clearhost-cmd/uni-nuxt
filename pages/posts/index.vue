@@ -5,9 +5,9 @@
     -->
     <div v-for="post in $store.state.posts" :key="post.id">
       <item-base :title="post.title" :body="post.body" :created="post.created">
-        <item-crud uri="posts" operation="" :id="post.id" action="View Replies" />
-        <item-crud uri="posts" operation="edit" :id="post.id" action="Edit Post" />
-        <item-crud uri="posts" operation="delete" :id="post.id" action="Delete Post" />
+        <item-crud uri="posts" operation="" :id="post.id" action="view replies" />
+        <item-crud uri="posts" operation="edit" :id="post.id" action="edit post" />
+        <item-crud uri="posts" operation="delete" :id="post.id" action="delete post" />
       </item-base>
     </div>
 
